@@ -1,16 +1,15 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from 'react';
 import { shallow } from 'enzyme';
+import Issues from './issues';
 
 const app = () => {
-    const wrapper = shallow(<App />);
+    const wrapper = shallow(<Issues />);
     return { wrapper };
 };
 
-describe('App', () => {
+describe('Issues', () => {
     it('should render snapshot', () => {
         const { wrapper } = app();
         expect(wrapper).toMatchSnapshot();
     });
 });
-

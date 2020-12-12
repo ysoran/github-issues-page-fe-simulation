@@ -16,6 +16,7 @@ interface ILabel{
     name:string;
     color:string;
     description: string;
+    default?: any;
 }
 interface IUser{
     avatar_url: string;
@@ -39,8 +40,8 @@ interface IUser{
 }
 
 interface IIssueRow{
-    active_lock_reason: string;
-    assignee: IUser;
+    active_lock_reason: string | null;
+    assignee: IUser | null;
     assignees: Array<string>;
     author_association: string;
     body: string;
@@ -66,6 +67,7 @@ interface IIssueRow{
     user: IUser;
     pull_request?: any;
     selected?: boolean;
+    score?: number;
 }
 
 interface IInlineColumn{
@@ -199,7 +201,7 @@ const IssueRow = (props: IIssueRow) => {
                                 </Grid.Column>
                                 <Grid.Column width={5} textAlign="right">
                                     <StyledWrapper>
-                                        {props.assignee && props.assignee.avatar_url && <StyledImgContainer><img style={{'width':'20px'}} src={props.assignee.avatar_url}/></StyledImgContainer>}
+                                        {props.assignee && props.assignee.avatar_url && <StyledImgContainer><img alt="avatar" style={{'width':'20px'}} src={props.assignee.avatar_url}/></StyledImgContainer>}
                                     </StyledWrapper>
                                 </Grid.Column>
                                 <Grid.Column width={5} textAlign="right">

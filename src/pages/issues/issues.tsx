@@ -12,6 +12,7 @@ interface ILabel{
     name:string;
     color:string;
     description: string;
+    default?: any;
 }
 interface IUser{
     avatar_url: string;
@@ -35,8 +36,8 @@ interface IUser{
 }
 
 interface IIssuesResponse{
-    active_lock_reason: string;
-    assignee: IUser;
+    active_lock_reason: string | null;
+    assignee: IUser | null;
     assignees: Array<string>;
     author_association: string;
     body: string;
@@ -61,6 +62,7 @@ interface IIssuesResponse{
     url: string;
     user: IUser;
     pull_request?: any;
+    score?: number;
 }
 
 const StyledContainer = styled(Container)`
@@ -88,7 +90,6 @@ const Issues = () => {
         })
     }, [requestData])
 
-    console.log(responseData);
     React.useEffect(() => {
         fetchData()
     }, [fetchData])

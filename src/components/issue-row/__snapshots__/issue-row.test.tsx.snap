@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Issue Row should render snapshot 1`] = `ShallowWrapper {}`;
