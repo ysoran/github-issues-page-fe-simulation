@@ -1,3 +1,5 @@
+A simulation with semantic-ui to try components
+
 # To run the project
 
 Just run "yarn" command to download related packages.
